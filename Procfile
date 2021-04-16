@@ -1,1 +1,0 @@
-web: gunicorn urlShortner.wsgi
