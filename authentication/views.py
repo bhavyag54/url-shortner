@@ -36,7 +36,7 @@ def signup(request):
         if request.POST['password'] == request.POST['password2']:
             if request.POST['username'] and request.POST['email'] and request.POST['password']:
                 try:
-                    user = User.objects.get(email = request.POST['email'])
+                    user = User.objects.get(username = request.POST['username'] or email = request.POST['email'])
                     return render(request, 'signup.html', {'error': "User already exists"})
                 except User.DoesNotExist:
                     User.objects.create_user(
@@ -45,7 +45,7 @@ def signup(request):
                         password = request.POST['password']
                     )
                     
-                    messages.success(request, "Signup Successful <br> Login Here")
+                    messages.success(request, "Signup Successful!! Login Here")
                     return redirect(login)
             else:
                 return render(request, 'signup.html', {'error': "Empty Fields"})
