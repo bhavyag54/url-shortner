@@ -9,3 +9,5 @@ class shorturl(models.Model):
     visits = models.IntegerField(default=0)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     
+    def __str__(self):
+        return f"{self.user} : {self.original_url[:20]}"
