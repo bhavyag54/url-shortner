@@ -54,7 +54,7 @@
         {%for url in urls%}
         <div class="row justify-content-between">
             <a href="{{ url.original_url }}">{{ url.original_url|slice:":40" }}</a>
-            <a href="http://localhost:8000/{{ url.short_url }}">http://localhost:8000/{{ url.short_url }}</a>
+            <a href="https://your-url-shortner.herokuapp.com/{{ url.short_url }}">https://your-url-shortner.herokuapp.com/{{ url.short_url }}</a>
             <p>visits: {{url.visits}}</p>
         </div>
             {%endfor%}
